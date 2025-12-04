@@ -8,15 +8,15 @@ export const config = {
         type: "BgzipFastaAdapter",
         fastaLocation: {
           locationType: "UriLocation",
-          uri: "https://huggingface.co/datasets/XiaoHanYS/MySDModels/resolve/main/macFas5.fa.gz",
+          uri: "https://www.modelscope.cn/datasets/Xiaohanys/RNAediting/resolve/master/macFas5.fa.gz",
         },
         faiLocation: {
           locationType: "UriLocation",
-          uri: "https://huggingface.co/datasets/XiaoHanYS/MySDModels/resolve/main/macFas5.fa.gz.fai",
+          uri: "https://www.modelscope.cn/datasets/Xiaohanys/RNAediting/resolve/master/macFas5.fa.gz.fai",
         },
         gziLocation: {
           locationType: "UriLocation",
-          uri: "https://huggingface.co/datasets/XiaoHanYS/MySDModels/resolve/main/macFas5.fa.gz.gzi",
+          uri: "https://www.modelscope.cn/datasets/Xiaohanys/RNAediting/resolve/master/macFas5.fa.gz.gzi",
         },
       },
       displays: [
@@ -43,12 +43,12 @@ export const config = {
         type: "BedTabixAdapter",
         bedGzLocation: {
           locationType: "UriLocation",
-          uri: "https://huggingface.co/datasets/XiaoHanYS/MySDModels/resolve/main/macFas5_RNA_editing.bed.gz",
+          uri: "https://www.modelscope.cn/datasets/Xiaohanys/RNAediting/resolve/master/macFas5_RNA_editing.bed.gz",
         },
         index: {
           location: {
             locationType: "UriLocation",
-            uri: "https://huggingface.co/datasets/XiaoHanYS/MySDModels/resolve/main/macFas5_RNA_editing.bed.gz.tbi",
+            uri: "https://www.modelscope.cn/datasets/Xiaohanys/RNAediting/resolve/master/macFas5_RNA_editing.bed.gz.tbi",
           },
         },
       },

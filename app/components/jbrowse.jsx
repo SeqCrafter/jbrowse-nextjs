@@ -24,8 +24,13 @@ export default function JBrowseView() {
 
   // 在 viewState 初始化之前显示加载提示
   if (!viewState) {
-    return <div>正在加载 JBrowse...</div>;
+    return <div className="px-20 pt-2">
+    <div className="flex justify-center">
+      <span className="skeleton skeleton-text text-2xl">JBrowse is loading...</span>
+    </div>
+    <div className="skeleton h-lvh w-full"></div>
+  </div>;
   }
-
+  
   return <JBrowseLinearGenomeView viewState={viewState} />;
 }
