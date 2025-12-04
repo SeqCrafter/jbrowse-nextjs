@@ -3,31 +3,26 @@ export const config = {
     name: "macFas5",
     sequence: {
       type: "ReferenceSequenceTrack",
-      trackId: "macFas5-1477673.8000000715",
+      trackId: "macFas5-refseq",
       adapter: {
-        type: "BgzipFastaAdapter",
-        fastaLocation: {
+        type: "TwoBitAdapter",
+        twoBitLocation: {
           locationType: "UriLocation",
-          uri: "https://www.modelscope.cn/datasets/Xiaohanys/RNAediting/resolve/master/macFas5.fa.gz",
+          uri: "https://hgdownload.soe.ucsc.edu/goldenPath/macFas5/bigZips/macFas5.2bit",
         },
-        faiLocation: {
+        chromSizesLocation: {
           locationType: "UriLocation",
-          uri: "https://www.modelscope.cn/datasets/Xiaohanys/RNAediting/resolve/master/macFas5.fa.gz.fai",
-        },
-        gziLocation: {
-          locationType: "UriLocation",
-          uri: "https://www.modelscope.cn/datasets/Xiaohanys/RNAediting/resolve/master/macFas5.fa.gz.gzi",
+          uri: "https://hgdownload.soe.ucsc.edu/goldenPath/macFas5/bigZips/macFas5.chrom.sizes",
         },
       },
       displays: [
         {
           type: "LinearReferenceSequenceDisplay",
-          displayId:
-            "macFas5-1477673.8000000715-LinearReferenceSequenceDisplay",
+          displayId: "macFas5-refseq-LinearReferenceSequenceDisplay",
         },
         {
           type: "LinearGCContentDisplay",
-          displayId: "macFas5-1477673.8000000715-LinearGCContentDisplay",
+          displayId: "macFas5-refseq-LinearGCContentDisplay",
         },
       ],
     },
@@ -36,7 +31,25 @@ export const config = {
   tracks: [
     {
       type: "FeatureTrack",
-      trackId: "i?2mknfvjwcrcld&pwd=p4zq-1744940133012",
+      trackId: "macFas5-refGene",
+      name: "NCBI RefSeq - UCSC RefSeq",
+      assemblyNames: ["macFas5"],
+      adapter: {
+        type: "Gff3TabixAdapter",
+        gffGzLocation: {
+          uri: "https://jbrowse.org/ucsc/macFas5/refGene.gff.gz",
+        },
+        index: {
+          indexType: "CSI",
+          location: {
+            uri: "https://jbrowse.org/ucsc/macFas5/refGene.gff.gz.csi",
+          },
+        },
+      },
+    },
+    {
+      type: "FeatureTrack",
+      trackId: "atlas-1764871695993-sessionTrack",
       name: "atlas",
       assemblyNames: ["macFas5"],
       adapter: {
@@ -55,74 +68,39 @@ export const config = {
       displays: [
         {
           type: "LinearBasicDisplay",
-          displayId:
-            "i?2mknfvjwcrcld&pwd=p4zq-1744940133012-LinearBasicDisplay",
+          displayId: "atlas-1764871695993-sessionTrack-LinearBasicDisplay",
           renderer: {
             type: "SvgFeatureRenderer",
-            color1: "rgb(228, 26, 28)",
+            color1: "rgb(228, 125, 127)",
           },
         },
         {
           type: "LinearArcDisplay",
-          displayId: "i?2mknfvjwcrcld&pwd=p4zq-1744940133012-LinearArcDisplay",
+          displayId: "atlas-1764871695993-sessionTrack-LinearArcDisplay",
         },
       ],
     },
     {
       type: "FeatureTrack",
-      trackId: "rmsk_macFas5",
-      name: "UCSC RepeatMasker",
+      trackId: "macFas5-rmsk",
+      name: "RepeatMasker",
       assemblyNames: ["macFas5"],
-      category: ["Repeats"],
       adapter: {
-        type: "UCSCAdapter",
-        base: {
-          locationType: "UriLocation",
-          uri: "https://api.genome.ucsc.edu",
+        type: "BedTabixAdapter",
+        bedGzLocation: {
+          uri: "https://jbrowse.org/ucsc/macFas5/rmsk.bed.gz",
         },
-        track: "rmsk",
-      },
-      displays: [
-        {
-          type: "LinearBasicDisplay",
-          displayId: "rmsk_display",
-          renderer: {
-            type: "SvgFeatureRenderer",
-            color1: "rgb(153, 153, 153)",
-            labels: { name: "jexl:get(feature,'repName')" },
+        index: {
+          indexType: "CSI",
+          location: {
+            uri: "https://jbrowse.org/ucsc/macFas5/rmsk.bed.gz.csi",
           },
         },
-        {
-          type: "LinearArcDisplay",
-          displayId: "rmsk_macFas5-LinearArcDisplay",
-        },
-      ],
-    },
-    {
-      type: "FeatureTrack",
-      trackId: "knownGene",
-      name: "UCSC knownGene",
-      assemblyNames: ["macFas5"],
-      category: ["Annotation"],
-      adapter: {
-        type: "UCSCAdapter",
-        base: {
-          locationType: "UriLocation",
-          uri: "https://api.genome.ucsc.edu",
-        },
-        track: "ensGene",
       },
-      displays: [
-        {
-          type: "LinearBasicDisplay",
-          displayId: "knownGene-LinearBasicDisplay",
-        },
-        { type: "LinearArcDisplay", displayId: "knownGene-LinearArcDisplay" },
-      ],
     },
   ],
   defaultSession: {
-    id: "lQix96toloWuVW03OUeCx",
+    id: "J3aafd9Pmvl7cX6Lmbiz8",
     name: "this session",
     margin: 0,
     drawerPosition: "right",
@@ -149,80 +127,79 @@ export const config = {
       id: "linearGenomeView",
       minimized: false,
       type: "LinearGenomeView",
-      offsetPx: 3230080,
-      bpPerPx: 3.7725856697819315,
+      offsetPx: 7879704,
+      bpPerPx: 19.864630880203645,
       displayedRegions: [
         {
           reversed: false,
-          refName: "chr1",
+          refName: "chr5",
           start: 0,
-          end: 227556264,
+          end: 189454096,
           assemblyName: "macFas5",
         },
       ],
       tracks: [
         {
-          id: "zs0toPLY4RAIbY0uzxPDY",
-          type: "ReferenceSequenceTrack",
-          configuration: "macFas5-1477673.8000000715",
+          id: "P9sRQSEcN4zqnoZuiEA3C",
+          type: "FeatureTrack",
+          configuration: "atlas-1764871695993-sessionTrack",
           minimized: false,
           pinned: false,
           displays: [
             {
-              id: "foXvOwJ2S7c-02JBs96tN",
-              type: "LinearReferenceSequenceDisplay",
-              heightPreConfig: 127,
+              id: "Y3B9Nhgmvdh_Nf55JExth",
+              type: "LinearBasicDisplay",
+              heightPreConfig: 263,
               configuration:
-                "macFas5-1477673.8000000715-LinearReferenceSequenceDisplay",
+                "atlas-1764871695993-sessionTrack-LinearBasicDisplay",
+            },
+          ],
+        },
+        {
+          id: "p5if8dWeWRFFFQIkt2-Fm",
+          type: "FeatureTrack",
+          configuration: "macFas5-rmsk",
+          minimized: false,
+          pinned: false,
+          displays: [
+            {
+              id: "VaNVpBX5P-M1LMotAHivE",
+              type: "LinearBasicDisplay",
+              heightPreConfig: 117,
+              configuration: "macFas5-rmsk-LinearBasicDisplay",
+            },
+          ],
+        },
+        {
+          id: "4FHwND87q5O5H5I7AtaK6",
+          type: "FeatureTrack",
+          configuration: "macFas5-refGene",
+          minimized: false,
+          pinned: false,
+          displays: [
+            {
+              id: "4bi_F5MyVcVVhP6UeG61J",
+              type: "LinearBasicDisplay",
+              heightPreConfig: 41,
+              configuration: "macFas5-refGene-LinearBasicDisplay",
+            },
+          ],
+        },
+        {
+          id: "ad_xmPYoT64--3SPvXLKv",
+          type: "ReferenceSequenceTrack",
+          configuration: "macFas5-refseq",
+          minimized: false,
+          pinned: false,
+          displays: [
+            {
+              id: "DdffJz26_1AbkTljQkhEk",
+              type: "LinearReferenceSequenceDisplay",
+              heightPreConfig: 50,
+              configuration: "macFas5-refseq-LinearReferenceSequenceDisplay",
               showForward: true,
               showReverse: true,
               showTranslation: true,
-            },
-          ],
-        },
-        {
-          id: "HEhzBsEQG4tm-9Yfixbgk",
-          type: "FeatureTrack",
-          configuration: "i?2mknfvjwcrcld&pwd=p4zq-1744940133012",
-          minimized: false,
-          pinned: false,
-          displays: [
-            {
-              id: "28c1SSLt_FMuAXpCJw8o1",
-              type: "LinearBasicDisplay",
-              heightPreConfig: 371,
-              configuration:
-                "i?2mknfvjwcrcld&pwd=p4zq-1744940133012-LinearBasicDisplay",
-            },
-          ],
-        },
-        {
-          id: "OZYdoGbfQ8xNSeYJz_x5K",
-          type: "FeatureTrack",
-          configuration: "rmsk_macFas5",
-          minimized: false,
-          pinned: false,
-          displays: [
-            {
-              id: "m5ITuW93rctmsWBLbSGuO",
-              type: "LinearBasicDisplay",
-              heightPreConfig: 157,
-              configuration: "rmsk_display",
-            },
-          ],
-        },
-        {
-          id: "th7igN0QOCxt0q9rgHE3o",
-          type: "FeatureTrack",
-          configuration: "knownGene",
-          minimized: false,
-          pinned: false,
-          displays: [
-            {
-              id: "IE_RruIgdidUnlN9fDFVf",
-              type: "LinearBasicDisplay",
-              heightPreConfig: 297,
-              configuration: "knownGene-LinearBasicDisplay",
             },
           ],
         },
